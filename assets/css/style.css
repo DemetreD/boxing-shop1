@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* utilities */
+.container {
+    width: 70%;
+    margin-inline: auto;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    /* text-decoration: none; */
+}
