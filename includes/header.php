@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,34 +10,12 @@
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
-    <!-- 
-    <header class="header container">
-        <h1 class="header__title">BOXGEAR</h1>
-
-        <nav class="header__menu">
-            <a href="/boxing-shop">Home</a>
-            <? //php if (isset($_SESSION['user_name'])): 
-            ?>
-                <span>Welcome, <?= htmlspecialchars($_SESSION['user_name']) ?></span>
-                <a href="/boxing-shop/php/auth/logout.php" class="btn">Logout</a>
-            <? //php else: 
-            ?>
-                <a href="/boxing-shop/php/auth/login.php" class="btn">Login</a>
-                <a href="/boxing-shop/php/auth/register.php" class="btn">Register</a>
-
-            <? //php endif; 
-            ?>
-        </nav>
-
-    </header> -->
-
-
     <header class="header container">
         <h1 class="header__title">BoxGear</h1>
+
         <nav class="header__menu">
-            <a class="header__link" href="#home">Home</a>
+            <a class="header__link" href="/boxing-shop">Home</a>
             <a class="header__link" href="#shop">Shop</a>
             <a class="header__link" href="#categories">Categories</a>
             <a class="header__link" href="#contacts">Contact</a>
@@ -50,7 +29,7 @@
         <?php if (isset($_SESSION["user_name"])): ?>
             <div class="header__btn-container">
                 <span>Welcome, <?= htmlspecialchars($_SESSION["user_name"]) ?></span>
-                <a href="logout.php" class="btn">Logout</a>
+                <a href="./auth/logout.php" class="btn">Logout</a>
                 <div class="header__cart-icon" onclick="toggleCart()">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">3</span>
@@ -58,8 +37,8 @@
             </div>
         <?php else: ?>
             <div class="header__btn-container">
-                <button class="btn" onclick="openModal('login')"><i class="fas fa-user"></i> Login</button>
-                <button class="btn" onclick="openModal('register')"><i class="fas fa-user-plus"></i> Register</button>
+                <a href="./auth/login.php" class="btn"><i class="fas fa-user"></i> Login</a>
+                <a href="./auth/register.php" class="btn"><i class="fas fa-user-plus"></i> Register</a>
                 <div class="header__cart-icon" onclick="toggleCart()">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
